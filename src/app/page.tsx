@@ -28,7 +28,7 @@ export default function Page() {
       <main className="container" style={{ paddingBottom: "3rem" }}>
         {/* Stage: one gesture, the video, with the claim beside it */}
         <section style={{ display: "grid", gridTemplateColumns: "minmax(0, 1fr)", gap: "2rem", alignItems: "start" }} className="hero">
-          <div>
+          <div style={{ maxWidth: "820px" }}>
             <p className="kicker">Lab build log · September 2026 · Wazuh · Shuffle · n8n · DFIR-IRIS · pfSense</p>
             <h1 className="h-display" style={{ marginTop: "0.75rem" }}>A SOAR layer between the SIEM detection and the firewall block</h1>
             <p className="prose" style={{ color: "var(--muted-foreground)", marginTop: "1rem", maxWidth: "62ch", fontSize: "1.05rem" }}>

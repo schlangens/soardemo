@@ -220,6 +220,6 @@ figure.shot video, figure.shot img, figure.shot iframe { display: block; width: 
 .footer-links a:hover { color: var(--accent); }
 .footer-copy { font-family: var(--font-mono); font-size: 0.75rem; color: var(--text-muted); }
 @media (prefers-reduced-motion: reduce) { .chip, .btn { transition: none; } }
-@media (min-width: 900px) {
-  .hero { grid-template-columns: minmax(0, 1.05fr) minmax(0, 1fr) !important; align-items: center; }
-}
+/* hero: copy first, then the loop at full container width so the video reads at size */
+.hero figure.shot { width: 100%; }
+figure.shot video { aspect-ratio: 16 / 9; object-fit: cover; }
