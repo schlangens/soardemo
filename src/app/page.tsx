@@ -1,5 +1,26 @@
 const REPO = "https://github.com/schlangens/soar-lab";
 
+const EARLIER = [
+  {
+    kicker: "Detection · Wazuh",
+    title: "Building a Home Lab SIEM: Wazuh with custom detection rules",
+    href: "https://scottslab.io/posts/home-lab-siem-wazuh-custom-detection",
+    text: "The detection side of this pipeline. Sixteen hosts into one Wazuh manager, about 60 custom rules, and the level-0 suppressions that took the console from hundreds of alerts a day to under twenty. The two active-response rules in that post are the ones this SOAR layer now sits in front of.",
+  },
+  {
+    kicker: "Tuning · pfSense, Zeek, Wazuh",
+    title: "Infrastructure hardening: firewall audit, IDS tuning, SIEM alert management",
+    href: "https://scottslab.io/posts/infrastructure-security-hardening-firewall-ids-siem",
+    text: "Where the false-positive problem was first measured. 67 pfSense rules audited and 21 WAN pass rules removed, Zeek C2 whitelists rewritten for roughly a 90 percent cut, and a batch of Wazuh rules with XML errors and colliding IDs fixed. Allowlist before you score is a habit from that pass.",
+  },
+  {
+    kicker: "Automation · Ansible, Ludus",
+    title: "Ansible and Ludus: the home lab as infrastructure as code",
+    href: "https://scottslab.io/posts/ansible-ludus-homelab-infrastructure-as-code",
+    text: "How the hosts in this lab get built and kept consistent. One control node, 14 hosts in nine inventory groups, one deployment role for Docker, UFW, systemd and health checks, and Ludus ranges from Packer templates. The reason a rebuild here is an afternoon, not a weekend.",
+  },
+];
+
 const STAGES = [
   { n: "01", name: "Detect", who: "Wazuh", text: "pfSense filterlog is decoded on the manager. The moderate flood rule, level 10, posts the alert as JSON to a Shuffle webhook instead of blocking. A severe flood rule still blocks directly, as a fail-safe if the SOAR path is down." },
   { n: "02", name: "Enrich", who: "Shuffle", text: "RDAP organization, the Tor exit list, Spamhaus DROP and the lab's own 40,000-entry Wazuh IOC list, read through the Wazuh API. AbuseIPDB and VirusTotal join when keys are present. Feeds are cached for an hour." },
@@ -152,6 +173,25 @@ export default function Page() {
             <a className="btn" href="https://scottslab.io/posts">More from the lab</a>
           </div>
           <p className="mono" style={{ color: "var(--text-muted)", fontSize: "0.78rem", marginTop: "1.5rem" }}>All addresses on this page are documentation ranges or public infrastructure. Internal hostnames and identifiers are omitted.</p>
+        </section>
+
+        <hr className="rule" />
+
+        {/* Earlier posts this build stands on */}
+        <section id="earlier">
+          <p className="kicker">Where this build started</p>
+          <h2 className="h-section" style={{ marginTop: "0.5rem", marginBottom: "0.5rem" }}>Three posts before this one</h2>
+          <p className="prose" style={{ maxWidth: "70ch", color: "var(--muted-foreground)" }}>The SOAR layer only makes sense on top of the SIEM, the firewall tuning and the automation that came first. If you want the whole story, or you are building the same stack, start here.</p>
+          <div className="earlier-grid">
+            {EARLIER.map((e) => (
+              <a key={e.href} className="earlier-card" href={e.href}>
+                <div className="stage-n">{e.kicker.toUpperCase()}</div>
+                <div className="earlier-title">{e.title}</div>
+                <p className="prose" style={{ margin: 0, fontSize: "0.95rem", color: "var(--muted-foreground)" }}>{e.text}</p>
+                <div className="mono earlier-more">Read the post →</div>
+              </a>
+            ))}
+          </div>
         </section>
       </main>
 

@@ -122,6 +122,8 @@ export default function Writeup() {
             <a className="btn" href={REPO}>Code on GitHub</a>
             <a className="btn" href="/">Back to the project</a>
           </div>
+          <H2 id="earlier">Where this build started</H2>
+          <p>Three earlier posts carry the ground this one stands on. <a href="https://scottslab.io/posts/home-lab-siem-wazuh-custom-detection">The Wazuh SIEM build</a> is the detection side: sixteen hosts into one manager, about 60 custom rules, and the suppressions that made the console usable. <a href="https://scottslab.io/posts/infrastructure-security-hardening-firewall-ids-siem">The hardening pass</a> is where the false-positive problem was first measured, with 67 pfSense rules audited and the Zeek whitelists rewritten. <a href="https://scottslab.io/posts/ansible-ludus-homelab-infrastructure-as-code">The Ansible and Ludus post</a> is how the hosts here get built and rebuilt. Read those and the guardrails above will look less like caution and more like scar tissue.</p>
           <p className="mono" style={{ color: "var(--text-muted)", fontSize: "0.78rem", marginTop: "1.5rem" }}>Public IPs, hostnames and internal identifiers are omitted from this article.</p>
         </article>
       </main>
