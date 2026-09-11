@@ -25,7 +25,7 @@ export default function Page() {
       </header>
 
       <main className="container" style={{ paddingBottom: "3rem" }}>
-        {/* Stage: one gesture, the video, with the claim beside it */}
+        {/* Stage: the claim, with the walkthrough video below */}
         <section style={{ display: "grid", gridTemplateColumns: "minmax(0, 1fr)", gap: "2rem", alignItems: "start" }} className="hero">
           <div style={{ maxWidth: "820px" }}>
             <p className="kicker">Lab build log · September 2026 · Wazuh · Shuffle · n8n · DFIR-IRIS · pfSense</p>
@@ -39,12 +39,6 @@ export default function Page() {
               <a className="btn" href="/writeup">Read the write-up</a>
             </div>
           </div>
-          <figure className="shot">
-            <video autoPlay muted loop playsInline poster="/media/soar-poster.jpg" aria-label="Silent loop of the SOAR pipeline walkthrough">
-              <source src="/media/soar-demo-loop.webm" type="video/webm" />
-              <source src="/media/soar-demo-loop.mp4" type="video/mp4" />
-            </video>
-          </figure>
         </section>
 
         <div className="stat-grid" style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(160px, 1fr))", gap: "0.75rem", marginTop: "2.5rem" }}>

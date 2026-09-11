@@ -220,6 +220,5 @@ figure.shot video, figure.shot img, figure.shot iframe { display: block; width: 
 .footer-links a:hover { color: var(--accent); }
 .footer-copy { font-family: var(--font-mono); font-size: 0.75rem; color: var(--text-muted); }
 @media (prefers-reduced-motion: reduce) { .chip, .btn { transition: none; } }
-/* hero: copy first, then the loop at full container width so the video reads at size */
-.hero figure.shot { width: 100%; }
+/* walkthrough video at full container width */
 figure.shot video { aspect-ratio: 16 / 9; object-fit: cover; }
