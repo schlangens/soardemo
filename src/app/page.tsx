@@ -1,4 +1,3 @@
-const STREAM = "https://customer-gb6ix8koycqn490d.cloudflarestream.com/5ab70384b3fc940a22620867b5ebcb22";
 const REPO = "https://github.com/schlangens/soar-lab";
 
 const STAGES = [
@@ -35,9 +34,9 @@ export default function Page() {
               Wazuh was already blocking flood sources on the pfSense WAN for 24 hours. The block fired with no context: the same rule treated a scanner and a large CDN the same way, and one night it blocked Google, Meta and my own server. This build puts enrichment, an allowlist, a score and a human gate in front of that action, and records every outcome in a case manager.
             </p>
             <div style={{ display: "flex", gap: "0.6rem", flexWrap: "wrap", marginTop: "1.5rem" }}>
-              <a className="btn btn-primary" href={`${STREAM}/watch`}>Watch the walkthrough · 1:26</a>
+              <a className="btn btn-primary" href="#video">Watch the walkthrough · 1:26</a>
               <a className="btn" href={REPO}>Code on GitHub</a>
-              <a className="btn" href="#writeup">Read the write-up</a>
+              <a className="btn" href="/writeup">Read the write-up</a>
             </div>
           </div>
           <figure className="shot">
@@ -60,14 +59,10 @@ export default function Page() {
         <section id="video">
           <p className="kicker">Walkthrough</p>
           <h2 className="h-section" style={{ marginTop: "0.5rem", marginBottom: "1rem" }}>Eighty-six seconds, one alert, three outcomes</h2>
-          <figure className="shot" style={{ aspectRatio: "16 / 9" }}>
-            <iframe
-              src={`${STREAM}/iframe?poster=${encodeURIComponent(`${STREAM}/thumbnails/thumbnail.jpg?time=3s`)}&preload=metadata`}
-              title="SOAR lab walkthrough"
-              style={{ width: "100%", height: "100%", border: 0 }}
-              allow="accelerometer; gyroscope; autoplay; encrypted-media; picture-in-picture;"
-              allowFullScreen
-            />
+          <figure className="shot">
+            <video controls preload="metadata" poster="/media/soar-poster.jpg" aria-label="SOAR lab walkthrough, 86 seconds">
+              <source src="/media/soar-video.mp4" type="video/mp4" />
+            </video>
           </figure>
         </section>
 
