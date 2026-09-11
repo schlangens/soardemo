@@ -165,7 +165,7 @@ export default function Page() {
         <div className="footer-links">
           <a href="https://scottslab.io/about">about</a>
           <a href="https://scottslab.io/tooling">tooling</a>
-          <a href="https://scottslab.io/portfolio">portfolio</a>
+          <a href="https://scottschlangen.com">portfolio</a>
           <a href="https://scottslab.io/newsletter">newsletter</a>
           <a href="https://x.com/scottslabio">@scottslabio</a>
           <a href="https://github.com/schlangens">github</a>
